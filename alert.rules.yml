@@ -1,0 +1,11 @@
+groups:
+- name: app-alerts
+  rules:
+  - alert: ApplicationDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Application is DOWN"
+      description: "The application is not responding on port 80"
